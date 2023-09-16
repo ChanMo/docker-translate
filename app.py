@@ -24,5 +24,5 @@ def translate(source, target):
     if not content:
         return 'the content is required.', 400
 
-    output = sp.run(['trans', f'{source}:{target}', content], capture_output=True, check=True)
+    output = sp.run(['trans', f'{source}:{target}', content, '-no-ansi'], capture_output=True, check=True)
     return output.stdout
